@@ -1,5 +1,5 @@
 
-let sever = io('https://chat-eight-wine.vercel.app/')
+let sever = io(`https://chat-eight-wine.vercel.app/:${PORT}`)
 
 
 let int = document.querySelector('.int')
