@@ -26,6 +26,14 @@
       {
         "src": "/views/\\.(ejs)$",
         "dest": "views/$1"
+      },
+      {
+        "src": "/public/(.*)",   
+        "source": "/public/$1"    
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/"
       }
     ]
   }
