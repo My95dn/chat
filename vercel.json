@@ -28,8 +28,8 @@
         "dest": "views/$1"
       },
       {
-        "src": "/public/(.*)",   
-        "source": "/public/$1"    
+        "src": "/style.css",
+        "dest": "/public/style.css"
       },
       {
         "src": "/(.*)",
