@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://appchat-omega.vercel.app/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="login">
+        <input type="text" class="int">
+        <button class="btn">Đăng Ký</button>
+        
+    </div>
+    <form action="/profile" method="POST" enctype="multipart/form-data">
+        <input type="file" name="avatar">
+        <button type="submit" class="btnn">save</button>
+        <% if (typeof image !== 'undefined') { %>
+            <img src="<%= image %>" alt="Ảnh của người dùng" class="imageAvatar">
+          <% } else { %>
+            <p></p>
+          <% } %>
+        
+    </form>
+    <div class="container">
+        
+        <div class="list">
+            <div class="chat">
+                <h1 class="sub-chat">Chat</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search My Friend" class="sub-search">
+            </div>
+            <h2 class="text">Danh Sách Nhóm</h2>
+            <div class="peoples">
+
+            </div>
+        </div>
+        <div class="sub-app">
+
+            <div class="content">
+                <div class="app">
+    
+                    <div class="sub-app-1">
+    
+                        <div class="selec-image">
+                            <img src="" alt="" class="image">
+                        </div>
+                        <div class="name">
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="test">
+    
+                </div>
+                <div class="show-chat">
+                    
+                </div>
+                
+            </div>
+            
+            <div class="container-input">
+
+                <div class="app-input">
+                    <input type="text" class="input" placeholder="chat">
+                    <div class="icon-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
