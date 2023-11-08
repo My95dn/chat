@@ -4,8 +4,8 @@
       {
         "src": "Sever.js",
         "use": "@vercel/node"
-      },
-      { "src": "public/**/*", "use": "@vercel/static" }
+      }
+      
     ],
     "routes": [
       {
@@ -23,6 +23,10 @@
       {
         "src": "/(.*)",
         "dest": "public/$1"  
+      },
+      {
+        "src": "/public/(.*)", 
+        "dest": "public/$1"
       },
       {
         "src": "/views/\\.(ejs)$",
