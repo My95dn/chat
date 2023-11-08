@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,26 @@
     <script src="https://chat-eight-wine.vercel.app/socket.io/socket.io.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div class="login">
         <input type="text" class="int">
         <button class="btn">Đăng Ký</button>
-        
+
     </div>
     <form action="/profile" method="POST" enctype="multipart/form-data">
         <input type="file" name="avatar">
         <button type="submit" class="btnn">save</button>
-        <% if (typeof image !== 'undefined') { %>
+        <% if (typeof image !=='undefined' ) { %>
             <img src="<%= image %>" alt="Ảnh của người dùng" class="imageAvatar">
-          <% } else { %>
-            <p></p>
-          <% } %>
-        
+            <% } else { %>
+                <p></p>
+                <% } %>
+
     </form>
     <div class="container">
-        
+
         <div class="list">
             <div class="chat">
                 <h1 class="sub-chat">Chat</h1>
@@ -43,26 +45,26 @@
 
             <div class="content">
                 <div class="app">
-    
+
                     <div class="sub-app-1">
-    
+
                         <div class="selec-image">
                             <img src="" alt="" class="image">
                         </div>
                         <div class="name">
-                          
+
                         </div>
                     </div>
                 </div>
                 <div class="test">
-    
+
                 </div>
                 <div class="show-chat">
-                    
+
                 </div>
-                
+
             </div>
-            
+
             <div class="container-input">
 
                 <div class="app-input">
@@ -76,4 +78,5 @@
     </div>
     <script src="/main.js"></script>
 </body>
+
 </html>
