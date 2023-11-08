@@ -4,6 +4,18 @@
     {
       "src": "Sever.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/style.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/main.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "views/view.ejs",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
