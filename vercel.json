@@ -14,9 +14,14 @@
       "use": "@vercel/static"
     },
     {
+      "src": "public/uploads",
+      "use": "@vercel/static"
+    },
+    {
       "src": "views/view.ejs",
       "use": "@vercel/node"
     }
+    
   ],
   "routes": [
     {

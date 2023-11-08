@@ -3,11 +3,15 @@ let app = express()
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
+let cors = require('cors')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 const multer  = require('multer')
+app.use(cors({
+    origin: 'https://chat-eight-wine.vercel.app/'
+}))
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads') 
