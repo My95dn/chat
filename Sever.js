@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
             array.push({user: data, avatar: pathnameImage})
             io.sockets.emit('sever-send-data-allUser', array)
             
-            socket.emit('sever-send-name', {name: socket.Username, imgAvatar: pathnameImage})
+            socket.emit('sever-send-name', {name: socket.Username, imgAvatar: pathnameImage}) 
             console.log('top array', array)
         }
     })
