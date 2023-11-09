@@ -14,9 +14,7 @@ let io = require('socket.io')(sever, {
     },
 })
 const multer = require('multer')
-app.use(cors({
-    origin: "*"
-}));
+app.use(cors());
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads')
