@@ -10,7 +10,7 @@ app.use(cors({
     preflightContinue: false,
     credentials: true
 }));
-let sever = require('http').Server(app)
+let sever = require('https').Server(app)
 let io = require('socket.io')(sever, {
     cors: {
         origin: 'https://chat-eight-wine.vercel.app/',
