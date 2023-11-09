@@ -7,7 +7,12 @@ let cors = require('cors')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 let sever = require('http').Server(app)
-let io = require('socket.io')(sever)
+let io = require('socket.io')(sever, {
+    cors: {
+        origin: 'https://chat-my95dn.vercel.app/',
+        methods: ['GET', 'POST'],
+    },
+})
 const multer = require('multer')
 app.use(cors({
     origin: "*"
