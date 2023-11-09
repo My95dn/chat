@@ -9,7 +9,9 @@ app.use(express.json())
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 const multer = require('multer')
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads')
@@ -25,9 +27,7 @@ let pathnameImage = ''
 let id = ''
 let images = []
 const port = process.env.PORT || 8080;
-sever.listen(port, () => {
-    console.log('hello')
-})
+
 
 io.on('connection', (socket) => {
     console.log('connection')
@@ -90,6 +90,10 @@ app.post('/profile', upload.single('avatar'), (req, res) => {
 })
 app.get('/', (req, res) => {
     res.render('view')
+})
+
+sever.listen(port, () => {
+    console.log('hello')
 })
 
 
