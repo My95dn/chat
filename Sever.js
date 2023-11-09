@@ -27,7 +27,9 @@ let pathnameImage = ''
 let id = ''
 let images = []
 const port = process.env.PORT || 8080;
-
+sever.listen(port, () => {
+    console.log('hello')
+})
 
 io.on('connection', (socket) => {
     console.log('connection')
@@ -92,9 +94,7 @@ app.get('/', (req, res) => {
     res.render('view')
 })
 
-sever.listen(port, () => {
-    console.log('hello')
-})
+
 
 
 
