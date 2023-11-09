@@ -39,6 +39,15 @@
     {
       "src": "/(.*)",
       "dest": "Sever.js"
+    },
+    {
+      "src": "/api/*",
+      "methods": ["GET", "POST"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://chat-eight-wine.vercel.app/",
+        "Access-Control-Allow-Methods": "GET, POST",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      }
     }
   ]
 }
