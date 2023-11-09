@@ -9,7 +9,7 @@ app.use(express.json())
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 const multer  = require('multer')
-
+app.use(cors());
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads') 
