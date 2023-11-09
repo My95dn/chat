@@ -9,7 +9,7 @@ app.use(express.json())
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever, {
     cors: {
-        origin: 'https://chat-my95dn.vercel.app/',
+        origin: 'https://chat-eight-wine.vercel.app/',
         methods: ['GET', 'POST'],
     },
 })
