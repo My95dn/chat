@@ -10,7 +10,7 @@ let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 const multer = require('multer')
 app.use(cors({
-    origin: 'http://chat-my95dn.vercel.app'|| 'http://chat-git-master-my95dn.vercel.app' || 'http://chat-eight-wine.vercel.app',
+    origin: 'https://chat-my95dn.vercel.app'|| 'https://chat-git-master-my95dn.vercel.app' || 'https://chat-eight-wine.vercel.app',
     methods: 'GET,POST',
     credentials: true,
 }));
