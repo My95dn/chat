@@ -9,11 +9,7 @@ app.use(express.json())
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 const multer = require('multer')
-app.use(cors({
-    origin: 'https://chat-my95dn.vercel.app'|| 'https://chat-git-master-my95dn.vercel.app' || 'https://chat-eight-wine.vercel.app',
-    methods: 'GET,POST',
-    credentials: true,
-}));
+app.use(cors());
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads')
