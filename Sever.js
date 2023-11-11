@@ -86,7 +86,6 @@ app.post('/profile', upload.single('avatar'), (req, res) => {
     let imagesUser = { id: id, avatar: pathnameImage }
     images.push(imagesUser)
     res.render('view', { image: pathnameImage })
-    pathnameImage = ''
 })
 app.get('/', (req, res) => {
     res.render('view')
