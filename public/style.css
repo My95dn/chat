@@ -45,7 +45,7 @@ a {
     
 }
 .name {
-    margin-left: 12px;
+    margin-left: 16px;
 }
 .container-input {
     margin-top: 82px;
@@ -184,10 +184,10 @@ a {
 .image {
     border-radius: 99999px;
     height: 44px;
-    width: 100%;
+    width: 120%;
 }
 .selec-image {
-    flex-basis: 40%;
+    flex-basis: 100%;
 }
 .avatar-image {
     width: 15%;
