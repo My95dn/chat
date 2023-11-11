@@ -55,9 +55,7 @@ btn.onclick = () => {
         data.forEach(element => {
             testdata.push(element.user)
 
-            console.log('element', element)
 
-            console.log('allContent', element)
 
             peoples.innerHTML += `
                             
