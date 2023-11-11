@@ -79,16 +79,13 @@ app.post('/profile', upload.single('avatar'), (req, res) => {
 
 
 
-
     console.log(req.file)
     let pathImage = req.file.filename
+    pathnameImage = ''
     pathnameImage = `/uploads/${pathImage}`
     let imagesUser = { id: id, avatar: pathnameImage }
     images.push(imagesUser)
-    if(pathnameImage !== pathImage) {
-
-        res.render('view', { image: pathnameImage })
-    }
+    res.render('view', { image: pathnameImage })
 })
 app.get('/', (req, res) => {
     res.render('view')
