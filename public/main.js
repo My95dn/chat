@@ -146,6 +146,7 @@ input.addEventListener("keydown", function (event) {
         let value = input.value;
         sever.emit('client-send-data-chat', { value, id, avatarImage: imageAVT });
         input.value = '';
+        
     }
 
 });
