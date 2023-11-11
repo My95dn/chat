@@ -3,20 +3,9 @@ let app = express()
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
-let cors = require('cors')
-app.use(cors({
-    origin: 'https://chat-eight-wine.vercel.app/',
-    methods: ['GET', 'POST'],
-    preflightContinue: false,
-    credentials: true
-}));
+
 let sever = require('http').Server(app)
-let io = require('socket.io')(sever, {
-    cors: {
-        origin: 'https://chat-eight-wine.vercel.app/',
-        methods: ['GET', 'POST'],
-    },
-})
+let io = require('socket.io')(sever)
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 const multer = require('multer')

@@ -187,10 +187,10 @@ a {
     width: 100%;
 }
 .selec-image {
-    flex-basis: 40%;
+    flex-basis: 100%;
 }
 .avatar-image {
-    width: 15%;
+    width: 10%;
     height: 50px;
     border-radius: 9999px;
 }
@@ -203,7 +203,7 @@ ul {
     margin-left: 10px;
 }
 .src {
-    width: 3%;
+    width: 6%;
     border-radius: 99999px;
     margin-right: 10px;
     height: 44px;
