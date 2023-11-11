@@ -1,5 +1,5 @@
 
-let sever = io("http://localhost:8080/")
+let sever = io("https://appchat-p16x.onrender.com/")
 
 
 let int = document.querySelector('.int')
