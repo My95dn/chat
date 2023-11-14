@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     sever.on('play-audio', (data) => {
         showAudio.innerHTML += `
-        <audio src="${data}" controls></audio>
+        <audio src="${data}" controls type="audio/wav"></audio>
         `
     })
 })
