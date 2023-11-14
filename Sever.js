@@ -3,7 +3,7 @@ let app = express()
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
-
+const fs = require('fs')
 let sever = require('http').Server(app)
 let io = require('socket.io')(sever)
 app.use(express.urlencoded({ extended: true }))
@@ -29,7 +29,6 @@ sever.listen(port, () => {
 })
 
 io.on('connection', (socket) => {
-    let filesClient = []
     console.log('connection')
     socket.on('client-send-data', (data) => {
 

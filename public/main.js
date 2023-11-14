@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 arrayMedia = []
                 mediaAudio = null
                 startaudios.textContent = 'Ghi âm đã dừng'
+                stopAudio.style.display = 'none'
+                let time = setTimeout(() => {
+                    startaudios.textContent = 'Start ghi âm'
+                    handleTimeout()
+                }, 2000)
+                const handleTimeout = () => {
+                    clearTimeout(time)
+                }
             }
              
             mediaAudio.start()
@@ -76,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stopAudio.addEventListener('click', () => {
         if(mediaAudio) {
             mediaAudio.stop()
+            
         }
     })
     sever.on('play-audio', (data) => {
