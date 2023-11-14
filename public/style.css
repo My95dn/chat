@@ -59,7 +59,7 @@ a {
 }
 
 .container-input {
-    margin-top: 82px;
+    margin-top: 5px;
 }
 
 .app {
@@ -79,7 +79,7 @@ a {
 .text {
     color: #3578E5;
     background-color: #e7f3ff;
-    border-radius: 999px;
+    border-radius: 10px;
     margin-top: 36px;
     padding: 10px;
     letter-spacing: 5px;
@@ -341,6 +341,11 @@ ul {
     transition: all 0.3s;
     cursor: pointer;
     display: none;
+    position: absolute;
+    top: -125%;
+}
+.audio {
+    position: relative;
 }
 
 .module-show {

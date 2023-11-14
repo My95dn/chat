@@ -1,5 +1,5 @@
 
-let sever = io("https://appchat-p16x.onrender.com")
+let sever = io("http://localhost:8080")
 
 
 let int = document.querySelector('.int')
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
              
             mediaAudio.start()
             startaudios.textContent = 'đang ghi âm...'
-
+            stopAudio.style.display = 'block'
             
 
         } else {
