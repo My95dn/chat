@@ -1,5 +1,13 @@
 let express = require('express')
+const cors = require('cors')
 let app = express()
+const corsOptions = {
+    origin: 'https://appchat-p16x.onrender.com',
+    methods: 'GET, POST',
+    credentials: true, 
+    optionsSuccessStatus: 204, 
+};
+app.use(cors(corsOptions))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
