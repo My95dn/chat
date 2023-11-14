@@ -4,7 +4,7 @@ const path = require('path')
 let app = express()
 const corsOptions = {
     origin: 'https://appchat-p16x.onrender.com',
-    methods: 'GET, POST',
+    methods: ['GET', 'POST'],
     credentials: true, 
     optionsSuccessStatus: 204, 
 };
@@ -15,7 +15,14 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 const fs = require('fs')
 let sever = require('http').Server(app)
-let io = require('socket.io')(sever)
+let io = require('socket.io')(sever, {
+    cors: {
+        origin: 'https://appchat-p16x.onrender.com',
+        methods: ['GET', 'POST'],
+        credentials: true,
+        optionsSuccessStatus: 204,
+    },
+})
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 const multer = require('multer')
