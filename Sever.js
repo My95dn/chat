@@ -1,15 +1,7 @@
 let express = require('express')
-const cors = require('cors')
-const path = require('path')
+
 let app = express()
-const corsOptions = {
-    origin: 'https://appchat-p16x.onrender.com',
-    methods: 'GET, POST',
-    credentials: true, 
-    optionsSuccessStatus: 204, 
-};
-const audioFilePath = path.join(__dirname, 'public', 'uploads', 'audio.wav')
-app.use(cors(corsOptions))
+
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -80,7 +72,7 @@ io.on('connection', (socket) => {
     socket.on('client-send-file', (data) => {
         console.log('file', data)
         
-        fs.writeFileSync(audioFilePath, data)
+       
         io.sockets.emit('play-audio', data)
     })
 
