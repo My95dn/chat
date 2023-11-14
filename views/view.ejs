@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="/node_modules/emoji-mart/dist/">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <script src="https://appchat-p16x.onrender.com/socket.io/socket.io.js"></script>
    
@@ -64,13 +63,29 @@
                 <div class="show-chat">
 
                 </div>
-
+                <div class="show-audio">
+                   
+                </div>
             </div>
 
             <div class="container-input">
 
                 <div class="app-input">
                     <input type="text" class="input" placeholder="chat">
+                    <div class="audio">
+                        <button class="Start">Start ghi âm</button>
+                        <button class="Stop">Stop ghi âm</button>
+                    </div>
+                    <div class="show-icon">
+                        <div class="module-show">
+                            <div class="int-icons">
+
+                                <input type="text" class="icon-subs" placeholder="Tìm kiếm biểu tượng cảm xúc">
+                            </div>
+                            <div class="shows-icons"></div>
+                        </div>
+                        <button class="icon-btnShow">icon</button>
+                    </div>
                     <div class="icon-send">
                         <i class="fas fa-paper-plane"></i>
                     </div>

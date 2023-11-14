@@ -29,6 +29,7 @@ sever.listen(port, () => {
 })
 
 io.on('connection', (socket) => {
+    let filesClient = []
     console.log('connection')
     socket.on('client-send-data', (data) => {
 
@@ -67,7 +68,12 @@ io.on('connection', (socket) => {
         io.sockets.emit('sever-send-data-allUser', array)
     })
 
-
+    socket.on('client-send-file', (data) => {
+        console.log('file', data)
+        let filePath = '/uploads/audio.wav'
+        fs.writeFileSync(filePath, data)
+        io.sockets.emit('play-audio', data)
+    })
 
 
 })

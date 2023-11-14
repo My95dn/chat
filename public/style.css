@@ -4,52 +4,64 @@
     box-sizing: border-box;
     font-size: 100%;
 }
+
 html {
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
+
 li {
     list-style: none;
     color: #fff;
 }
+
 a {
     text-decoration: none;
 }
+
 .test {
     display: grid;
     grid-template-rows: repeat(2, 36%);
 }
+
 .container {
     display: none;
     overflow: hidden;
 }
+
 .list {
     background-color: #202123;
     width: 25%;
     height: 900px;
     overflow-y: scroll;
 }
+
 .content {
     background-color: #fff;
     width: 100%;
     height: 765px;
 }
+
 .sub-app {
     display: grid;
     grid-template-rows: repeat(2, 85%);
     width: 100%;
 }
+
 .sub-app-1 {
     display: flex;
     align-items: center;
-    
+
 }
+
 .name {
     margin-left: 16px;
 }
+
 .container-input {
     margin-top: 82px;
 }
+
 .app {
     border-bottom: 1px solid #ebebeb;
     height: 7%;
@@ -59,9 +71,11 @@ a {
     margin-top: 35px;
     padding-bottom: 20px;
 }
+
 .sub-app {
     margin-left: 20px;
 }
+
 .text {
     color: #3578E5;
     background-color: #e7f3ff;
@@ -77,6 +91,7 @@ a {
     font-weight: 800;
     margin-bottom: 35px;
 }
+
 .sub-chat {
     color: #fff;
     text-align: center;
@@ -84,27 +99,33 @@ a {
     font-size: 1.4rem;
     font-weight: 800;
 }
+
 .sub-search {
     padding: 15px;
     border-radius: 999px;
     outline: none;
     border: none;
-    padding-left: 88px;
+    padding-left: 20px;
+    width: 90%;
 }
+
 .search {
     text-align: center;
     margin-top: 20px;
     padding: 5px;
 }
+
 .peoples {
     margin-left: 20px;
 }
+
 .element {
     font-size: 1.3rem;
     font-weight: 600;
     padding: 5px;
     letter-spacing: 1px;
 }
+
 .app-input {
     bottom: 52%;
     left: 0;
@@ -112,8 +133,9 @@ a {
     padding: 0 15px;
     display: flex;
     align-items: center;
-    
+
 }
+
 .input {
     width: 100%;
     border-radius: 999px;
@@ -122,11 +144,13 @@ a {
     border: none;
     background-color: #f0f2f5;
 }
+
 .fas {
     padding: 15px;
     font-size: 1.5rem;
     color: #0084ff;
 }
+
 .show-chat {
     margin-top: 150px;
     width: 100%;
@@ -138,6 +162,7 @@ a {
     scroll-padding: 20px;
     scroll-behavior: smooth;
 }
+
 .mess {
     overflow: hidden;
     background-color: #e4e6eb;
@@ -147,8 +172,9 @@ a {
     padding: 10px;
     display: inline-block;
     color: #050505;
-    
+
 }
+
 .my-mess {
     overflow: hidden;
     background-color: #0084ff;
@@ -159,6 +185,7 @@ a {
     display: inline-block;
     color: #fff;
 }
+
 .other {
     overflow: hidden;
     background-color: #e4e6eb;
@@ -169,86 +196,220 @@ a {
     display: inline-block;
     color: #050505;
 }
+
 .icon-send {
     cursor: pointer;
     margin-left: 10px;
 }
+
 .icon-send:hover {
     background-color: #e4e6eb;
     border-radius: 999px;
-    
+
 }
+
 .imageAvatar {
     width: 10%;
 }
+
 .image {
     border-radius: 99999px;
     height: 44px;
     width: 120%;
 }
+
 .selec-image {
     flex-basis: 100%;
 }
+
 .avatar-image {
     width: 15%;
     height: 50px;
     border-radius: 9999px;
 }
+
 .app-element {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
+
 ul {
     margin-left: 10px;
 }
+
 .src {
     width: 3%;
     border-radius: 99999px;
     margin-right: 10px;
     height: 44px;
 }
+
 .ul {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
+.icon-btnShow {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: #000;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.icon-btnShow:hover {
+    opacity: 0.8;
+}
+
+.show-icon {
+    margin-left: 26px;
+    cursor: pointer;
+    position: relative;
+}
+
+.module-show {
+    position: absolute;
+    top: -868%;
+    width: 340px;
+    background-color: #111;
+    height: 100;
+    left: -301%;
+    height: 313px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.icon-subs {
+    width: 78%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 9999px;
+    margin-bottom: 15px;
+    
+}
+
+.Start {
+    outline: none;
+    border: none;
+    padding: 10px 12px;
+    background-color: #111;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 123%;
+    margin: 0 9px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.Start:hover {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 700;
+}
+.int-icons {
+    position: sticky;
+    top: 0%;
+    z-index: 999;
+    background-color: #111;
+}
+
+.Stop:hover {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 700;
+}
+
+.Stop {
+    outline: none;
+    border: none;
+    padding: 10px 12px;
+    background-color: #111;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 123%;
+    margin: 0 9px;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: none;
+}
+
+.module-show {
+    display: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: all 0.5s;
+}
+
+.item {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 30px;
+}
+
+.item:hover {
+    opacity: 0.8;
+}
+
+.shows-icons {
+    text-align: justify;
+    margin-left: 10px;
+}
+
 
 @media only screen and (max-width: 768px) {
-   .container {
-    flex-wrap: wrap;
-   }
-   .list {
-    width: 100%;
-    height: 100%;
-   }
-   .show-chat {
-    margin-top: 50px;
-   }
-   .src {
-    width: 13%;
-   }
-   .show-chat {
-    height: 370px;
-   }
-   .content {
-    height: 400px;
-   }
-   .sub-app {
-    display: flex;
-    flex-direction: column;
-   }
-   .container-input {
-    padding-bottom: 20px;
-   }
-   .image {
-    width: 136%;
-   }
-   .selec-image {
-    flex-basis: 63%;
-   }
-   .name {
-    margin-left: 22px;
-   }
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .list {
+        width: 100%;
+        height: 100%;
+    }
+
+    .show-chat {
+        margin-top: 50px;
+    }
+
+    .src {
+        width: 13%;
+    }
+
+    .show-chat {
+        height: 370px;
+    }
+
+    .content {
+        height: 400px;
+    }
+
+    .sub-app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-input {
+        padding-bottom: 20px;
+    }
+
+    .image {
+        width: 136%;
+    }
+
+    .selec-image {
+        flex-basis: 63%;
+    }
+
+    .name {
+        margin-left: 22px;
+    }
 }

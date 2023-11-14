@@ -1,5 +1,5 @@
 
-let sever = io("https://appchat-p16x.onrender.com/")
+let sever = io("https://appchat-p16x.onrender.com")
 
 
 let int = document.querySelector('.int')
@@ -18,6 +18,13 @@ let imageAvatar = document.querySelector('.imageAvatar')
 let form = document.querySelector('form')
 let image = document.querySelector('.image')
 let subsearch = document.querySelector('.sub-search')
+let iconShow = document.querySelector('.icon-btnShow')
+let moduleShow = document.querySelector('.module-show')
+let showsIcons = document.querySelector('.shows-icons')
+let item = document.querySelectorAll('.item')
+let iconSubs = document.querySelector('.icon-subs')
+let showAudio = document.querySelector('.show-audio')
+
 let array = []
 let avartars = []
 let subname = ''
@@ -25,7 +32,122 @@ let allContent = []
 let imageAVT = ""
 let testImage = ""
 let testdata = []
+let testDtaa = []
+let showClose = false
 let id = (Math.random() + 1).toString(36).substring(7)
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let startaudios = document.querySelector('.Start')
+    let stopAudio = document.querySelector('.Stop')
+    let mediaAudio
+    let arrayMedia = []
+    startaudios.addEventListener('click', async() => {
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+
+            const microUser = await navigator.mediaDevices.getUserMedia({
+                audio: true
+            })
+            mediaAudio = new MediaRecorder(microUser)
+            mediaAudio.ondataavailable = (e) => {
+                if(e.data.size > 0) {
+                    arrayMedia.push(e.data)
+                }
+            }
+            mediaAudio.onstop = () => {
+                const dataAudio = new Blob(arrayMedia, { type: 'audio/wav' })
+                sever.emit('client-send-file', dataAudio)
+                console.log('dataAudio', dataAudio)
+                arrayMedia = []
+                mediaAudio = null
+                startaudios.textContent = 'Ghi âm đã dừng'
+            }
+             
+            mediaAudio.start()
+            startaudios.textContent = 'đang ghi âm...'
+
+            
+
+        } else {
+            console.log('Trình duyệt không hổ trợ audio')
+        }
+
+    })
+    stopAudio.addEventListener('click', () => {
+        if(mediaAudio) {
+            mediaAudio.stop()
+        }
+    })
+    sever.on('play-audio', (data) => {
+        showAudio.innerHTML += `
+        <audio src="${data}" controls></audio>
+        `
+    })
+})
+
+
+
+
+
+fetch('https://emoji-api.com/emojis?access_key=5ea6723d336d7cb30c36b90cbf055163df837536')
+    .then(res => {
+       return res.json()
+    })
+    .then(data => handleIcon(data))
+
+
+
+
+
+const handleIcon = (data) => {
+    testDtaa = data
+    data.forEach(element => {
+        let li = document.createElement('li')
+        li.className = 'item'
+        li.setAttribute('emoji-name', element.slug)
+        li.textContent = element.character
+        showsIcons.appendChild(li)
+        li.addEventListener('click', () => {
+            let test = li.textContent
+            input.value += test
+        })
+    })
+}
+
+const handleClose = () => {
+    showClose = !showClose
+}
+
+iconShow.onclick = () => {
+    handleClose()
+    if(showClose) {
+        moduleShow.style.display = 'block'
+    } else {
+        moduleShow.style.display = 'none'
+    }
+    handleIcon(testDtaa)
+}
+
+
+iconSubs.addEventListener('input', (e) => {
+   let valuess = e.target.value.toLowerCase()
+   let items = document.querySelectorAll('.item')
+   items.forEach(element => {
+       console.log(element)
+    
+       
+       let valueIcons = element.getAttribute('emoji-name').toLowerCase()
+       console.log(typeof valueIcons)
+        if(valueIcons.includes(valuess)) {
+            element.style.display = 'block'
+        } else {
+            element.style.display = 'none'
+        }
+   })
+})
+
+
+
 btnn.onclick = () => {
     sever.emit('client-send-id', id)
 }
@@ -164,6 +286,8 @@ iconSend.onclick = () => {
 sever.on('sever-send-data-client', (data) => {
     handleRender(data)
 })
+
+
 
 
 
