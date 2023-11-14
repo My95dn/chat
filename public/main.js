@@ -139,15 +139,17 @@ iconShow.onclick = () => {
 
 
 iconSubs.addEventListener('input', (e) => {
+    let arrayIcon = []
    let valuess = e.target.value.toLowerCase()
    let items = document.querySelectorAll('.item')
    items.forEach(element => {
        console.log(element)
     
        
-       let valueIcons = element.getAttribute('emoji-name').toLowerCase()
-       console.log(typeof valueIcons)
-        if(valueIcons.includes(valuess)) {
+       let valueIcons = element.getAttribute('emoji-name')
+       arrayIcon.push(valueIcons)
+       
+        if(arrayIcon.includes(valuess)) {
             element.style.display = 'block'
         } else {
             element.style.display = 'none'
