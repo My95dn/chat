@@ -38,6 +38,7 @@ let id = (Math.random() + 1).toString(36).substring(7)
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    let severs = io("https://appchat-p16x.onrender.com")
     let startaudios = document.querySelector('.Start')
     let stopAudio = document.querySelector('.Stop')
     let mediaAudio
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             mediaAudio.onstop = () => {
                 const dataAudio = new Blob(arrayMedia, { type: 'audio/wav' })
-                sever.emit('client-send-file', dataAudio)
+                severs.emit('client-send-file', dataAudio)
                 console.log('dataAudio', dataAudio)
                 arrayMedia = []
                 mediaAudio = null
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
     })
-    sever.on('play-audio', (data) => {
+    severs.on('play-audio', (data) => {
         showAudio.innerHTML += `
         <audio src="${data}" controls type="audio/wav"></audio>
         `
