@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
     })
-    sever.on('play-audio', (data) => {
-        showAudio.innerHTML += `
-        <audio src="${data}" controls type="audio/wav"></audio>
-        `
-    })
+})
+sever.on('play-audio', (data) => {
+    showAudio.innerHTML += `
+    <audio src="${data}" controls type="audio/wav"></audio>
+    `
 })
 
 
