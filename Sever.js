@@ -76,6 +76,11 @@ io.on('connection', (socket) => {
             console.log('array', array)
         }
     })
+    socket.on('client-send-file', (data) => {
+        console.log('file', data)
+            io.sockets.emit('play-audio', data)
+        
+    })
 
     socket.on('disconnect', () => {
 
@@ -84,11 +89,6 @@ io.on('connection', (socket) => {
         io.sockets.emit('sever-send-data-allUser', array)
     })
 
-    socket.on('client-send-file', (data) => {
-        console.log('file', data)
-            io.sockets.emit('play-audio', data)
-        
-    })
 
 
 })
