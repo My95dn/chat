@@ -1,7 +1,6 @@
 let express = require('express')
 const cors = require('cors')
 const path = require('path')
-const wav = require('wav')
 let app = express()
 const corsOptions = {
     origin: 'https://appchat-p16x.onrender.com',
@@ -87,12 +86,7 @@ io.on('connection', (socket) => {
 
     socket.on('client-send-file', (data) => {
         console.log('file', data)
-        const reader = new wav.Reader()
-        reader.on('format', (format) => {
-            console.log('dữ liệu', format)
             io.sockets.emit('play-audio', data)
-        })
-        reader.end(data)
         
     })
 
