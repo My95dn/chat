@@ -55,7 +55,7 @@ let id = (Math.random() + 1).toString(36).substring(7)
                 }
             }
             mediaAudio.onstop = () => {
-                const dataAudio = new Blob(arrayMedia, { type: 'audio/wav' })
+                let dataAudio = new Blob(arrayMedia, { type: 'audio/wav' })
                 let dataAudios = URL.createObjectURL(dataAudio)
                 sever.emit('client-send-file', dataAudios)
                 console.log('dataAudio', dataAudios)
