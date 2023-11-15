@@ -1,5 +1,5 @@
 
-let sever = io("https://appchat-p16x.onrender.com/socket.io")
+let sever = io("https://appchat-p16x.onrender.com")
 
 
 let int = document.querySelector('.int')
