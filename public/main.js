@@ -37,7 +37,7 @@ let showClose = false
 let id = (Math.random() + 1).toString(36).substring(7)
 
 
-document.addEventListener('DOMContentLoaded', () => {
+
     let startaudios = document.querySelector('.Start')
     let stopAudio = document.querySelector('.Stop')
     let mediaAudio
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
     })
-})
+
 sever.on('play-audio', (data) => {
     showAudio.innerHTML += `
     <audio src="${data}" controls type="audio/wav"></audio>
