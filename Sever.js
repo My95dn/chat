@@ -81,6 +81,7 @@ io.on('connection', (socket) => {
 
         console.log('file', data)
         audioArrray.push(data)
+        console.log('sda', audioArrray)
             io.sockets.emit('play-audio', audioArrray)
 
         
