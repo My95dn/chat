@@ -80,9 +80,7 @@ io.on('connection', (socket) => {
     socket.on('client-send-file', (data) => {
 
         console.log('file', data)
-        audioArrray.push(data)
-        console.log('sda', audioArrray)
-            io.sockets.emit('play-audio', audioArrray)
+            io.sockets.emit('play-audio', data)
 
         
     })
