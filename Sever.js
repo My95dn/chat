@@ -40,6 +40,7 @@ let subArray = []
 let pathnameImage = ''
 let id = ''
 let images = []
+let audioArrray = []
 const port = process.env.PORT || 8080;
 sever.listen(port, () => {
     console.log('hello')
@@ -65,7 +66,7 @@ io.on('connection', (socket) => {
 
     socket.on('client-send-data-chat', (data) => {
 
-
+        
         io.sockets.emit('sever-send-data-client', data)
         console.log(data)
     })
@@ -77,8 +78,11 @@ io.on('connection', (socket) => {
         }
     })
     socket.on('client-send-file', (data) => {
+
         console.log('file', data)
-            io.sockets.emit('play-audio', data)
+        audioArrray.push(data)
+            io.sockets.emit('play-audio', audioArrray)
+
         
     })
 
