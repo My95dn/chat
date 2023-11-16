@@ -92,7 +92,7 @@ let id = (Math.random() + 1).toString(36).substring(7)
 sever.on('play-audio', (data) => {
     console.log('amam thanh', data)
     data.forEach(element => {
-
+        console.log('es', element)
         showAudio.innerHTML += `
         <audio src="${element}" controls type="audio/wav"></audio>
         `
